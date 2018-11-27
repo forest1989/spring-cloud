@@ -16,7 +16,7 @@ eureka:
 zuul: 
   routes:
     forest-api: 
-      path: /api-user/**
+      path: /forest/**
       service-id: forest-api 
 
  
