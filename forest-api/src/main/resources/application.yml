@@ -1,0 +1,44 @@
+spring:
+  application:
+    # 服务名称
+    name: forest-api
+  #oracle database settings
+  datasource:
+    #platform: oracle
+    #url: jdbc:oracle:thin:@192.168.1.104:1521:orcl
+    #username: jeesite
+    #password: jeesite
+    #driverClassName: oracle.jdbc.driver.OracleDriver
+    #mysql database setting
+    platform: mysql
+    url: jdbc:mysql://localhost:3306/forest?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+    driverClassName: com.mysql.jdbc.Driver
+mybatis:
+  mapperLocations: classpath:/mappings/**/*.xml
+  type-aliases-package: com.forest.api.entity
+  #开启自动驼峰命名规则（camel case）映射
+  configuration:
+    map-underscore-to-camel-case: true
+# 服务注册中心
+eureka:
+  client: 
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8081
+  session:
+    timeout: 30
+  tomcat:
+    max-http-post-size: 1
+    uri-encoding: UTF-8
+  #开启https
+  #ssl:
+    #key-store: classpath:keystore.p12
+    #key-store-password: 123456
+    #key-store-type: PKCS12
+    #key-alias: tomcat
+    
+logging:
+  config: classpath:log4j2.yml 

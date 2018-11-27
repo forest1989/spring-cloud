@@ -1,0 +1,156 @@
+<<<<<<< HEAD
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+!ru.alfabank.opp.*.ear
+*.pydevproject
+.project
+.metadata
+target/
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+.settings
+.springBeans
+.gradle
+!gradle-wrapper.jar
+build
+bin
+git.properties
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+
+.buildpath
+*.iml
+*.ipr
+*.iws
+.idea/
+**/*.iml
+**/.idea/
+*~
+.gradle
+/build
+/out
+/intTestHomeDir
+/subprojects/*/out
+/intellij
+/reports
+/buildSrc/lib
+/buildSrc/build
+/subprojects/*/build
+/subprojects/docs/src/samples/*/*/build
+/website/build
+/website/website.iml
+/website/website.ipr
+/website/website.iws
+/performanceTest/build
+/subprojects/*/ide
+/*.iml
+/*.ipr
+/*.iws
+/subprojects/*/*.iml
+/buildSrc/*.ipr
+/buildSrc/*.iws
+/buildSrc/*.iml
+/buildSrc/out
+*.classpath
+*.project
+*.settings
+/bin
+/subprojects/*/bin
+.DS_Store
+/performanceTest/lib
+.textmate
+/incoming-distributions
+.idea
+*.iml
+*.sublime-*
+.nb-gradle
+/classes
+build
+gradle.properties
+checkstyle-config.xml
+pmd-config.xml
+findbugs-config.xml
+derbyDB
+derby.log
+*.log
+**/resources/rebel.xml
+=======
+
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# PyDev specific (Python IDE for Eclipse)
+*.pydevproject
+
+# CDT-specific (C/C++ Development Tooling)
+.cproject
+
+# CDT- autotools
+.autotools
+
+# Java annotation processor (APT)
+.factorypath
+
+# PDT-specific (PHP Development Tools)
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# Tern plugin
+.tern-project
+
+# TeXlipse plugin
+.texlipse
+
+# STS (Spring Tool Suite)
+.springBeans
+
+# Code Recommenders
+.recommenders/
+
+# Annotation Processing
+.apt_generated/
+
+# Scala IDE specific (Scala & Java development for Eclipse)
+.cache-main
+.scala_dependencies
+.worksheet
+>>>>>>> branch 'master' of https://gitee.com/rit/eureka-server.git
