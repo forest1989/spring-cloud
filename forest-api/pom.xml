@@ -81,7 +81,7 @@
 			<artifactId>ojdbc14</artifactId>
 			<version>${oracle.driver.version}</version>
 			<scope>system</scope>
-			<systemPath>${project.basedir}/lib/ojdbc14-10.2.0.4.0.jar</systemPath>
+			<systemPath>${project.basedir}/lib/ojdbc6.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>apache.ant.zip</groupId>
@@ -147,6 +147,10 @@
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-feign</artifactId>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>
