@@ -39,6 +39,12 @@ server:
     #key-store-password: 123456
     #key-store-type: PKCS12
     #key-alias: tomcat
-    
+
+# 配置info信息
+info: 
+  app.name: forest-api
+  company.name: www.forest.com
+  build.artifactId: $project.artifactId$
+
 logging:
   config: classpath:log4j2.yml 

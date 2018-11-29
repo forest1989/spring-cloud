@@ -1,4 +1,4 @@
-package com.forest.zuul.common.jwt.model;
+package com.forest.zuul.common;
 
 import com.forest.zuul.common.utils.GsonUtil;
 

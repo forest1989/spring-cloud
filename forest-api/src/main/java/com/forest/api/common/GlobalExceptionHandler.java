@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.alibaba.fastjson.JSONObject;
+import com.forest.api.common.utils.CommonResult;
 
 /**
  * 
@@ -26,13 +26,8 @@ public class GlobalExceptionHandler {
 	 * @throws Exception
 	 */
 	@ExceptionHandler(value = Exception.class)
-	public String allExceptionHandler(HttpServletRequest request, Exception exception) throws Exception {
-
+	public CommonResult allExceptionHandler(HttpServletRequest request, Exception exception) throws Exception {
 		exception.printStackTrace();
-		JSONObject obj = new JSONObject();
-		obj.put("status", "1");
-		obj.put("msg", exception.getMessage());
-		obj.put("data", "");
-        return obj.toJSONString();  
+        return new CommonResult(500, exception.getMessage());  
 	}
 }

@@ -1,7 +1,7 @@
 package com.forest.zuul.common.jwt.api;
 
+import com.forest.zuul.common.CommonResult;
 import com.forest.zuul.common.jwt.config.Constant;
-import com.forest.zuul.common.jwt.model.CommonResult;
 
 public class ResponseMgr {
 	

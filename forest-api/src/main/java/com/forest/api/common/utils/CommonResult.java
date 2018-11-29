@@ -1,6 +1,4 @@
-package com.forest.api.common.jwt.model;
-
-import com.forest.api.common.utils.GsonUtil;
+package com.forest.api.common.utils;
 
 /**
  * 标准数据返回格式	
@@ -15,7 +13,7 @@ public class CommonResult {
 	
 	private String message;//返回描述
 	
-	private String token;//身份标识
+	private String token; //token表示
 	
 	
 
@@ -39,7 +37,8 @@ public class CommonResult {
 		this.message = message;
 		this.token = token;
 	}
-
+	
+	
 	public Integer getCode() {
 		return code;
 	}

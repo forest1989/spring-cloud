@@ -4,16 +4,12 @@
 package com.forest.api.common.persistence;
 
 import java.io.Serializable;
-import java.util.Map;
-
-import javax.xml.bind.annotation.XmlTransient;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.forest.api.common.config.Global;
 import com.forest.api.common.utils.StringUtils;
-import com.google.common.collect.Maps;
 
 /**
  * Entity支持类
@@ -29,11 +25,7 @@ public abstract class BaseEntity<T> implements Serializable {
 	 * 实体编号（唯一标识）
 	 */
 	protected String id;
-	
-	/**
-	 * 自定义SQL（SQL标识，SQL内容）
-	 */
-	protected Map<String, String> sqlMap;
+
 	
 	/**
 	 * 是否是新记录（默认：false），调用setIsNewRecord()设置新记录，使用自定义ID。
@@ -59,19 +51,6 @@ public abstract class BaseEntity<T> implements Serializable {
 	}
 	
 
-	@JsonIgnore
-	@XmlTransient
-	public Map<String, String> getSqlMap() {
-		if (sqlMap == null){
-			sqlMap = Maps.newHashMap();
-		}
-		return sqlMap;
-	}
-
-	public void setSqlMap(Map<String, String> sqlMap) {
-		this.sqlMap = sqlMap;
-	}
-	
 	/**
 	 * 插入之前执行方法，子类实现
 	 */

@@ -1,7 +1,7 @@
 package com.forest.api.common.jwt.api;
 
 import com.forest.api.common.jwt.config.Constant;
-import com.forest.api.common.jwt.model.CommonResult;
+import com.forest.api.common.utils.CommonResult;
 
 public class ResponseMgr {
 	
