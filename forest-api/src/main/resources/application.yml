@@ -26,6 +26,11 @@ eureka:
   client: 
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+  instance:
+    # 该配置指示eureka客户端需要向eureka服务器发送心跳的频率  (Spring Cloud默认该配置是 30s)
+    lease-renewal-interval-in-seconds: 10
+    # 该配置指示eureka服务器在接收到最后一个心跳之后等待的时间，然后才能从列表中删除此实例 (Spring Cloud默认该配置是 90s)
+    lease-expiration-duration-in-seconds: 30
 server:
   port: 8081
   session:
