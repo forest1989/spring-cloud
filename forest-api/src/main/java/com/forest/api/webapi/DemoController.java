@@ -3,6 +3,7 @@ package com.forest.api.webapi;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,8 +12,8 @@ import com.forest.api.common.log.Log4j2Utils;
 import com.forest.api.common.utils.CommonResult;
 import com.forest.api.common.web.BaseController;
 import com.forest.api.entity.Demo;
-import com.forest.api.service.DemoFeignService;
 import com.forest.api.service.DemoService;
+import com.forest.api.service.clinet.DemoFeignService;
 
 /**
  * 
@@ -42,9 +43,9 @@ public class DemoController extends BaseController{
     	log1.info("getBussinessLogger===日志测试");
     	//log2.debug("getDBLogger===日志测试");
     	//Thread.sleep(1000000);
-    	log1.info("Feign调用开始==============");
+    	System.out.println("Feign调用开始==============");
     	String str = demoFeignService.helloService();
-    	log1.info("Feign调用日志结果====" + str);
+    	System.out.println("Feign调用日志结果====" + str);
     	Demo d = demoService.get(new Demo());
         return new CommonResult(0000, d, "数据获取成功");
     }

@@ -1,9 +1,11 @@
-package com.forest.api.service;
+package com.forest.api.service.clinet;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.forest.api.service.clinet.Hystrix.DemoFeignClientHystrix;
 
 /**
  * 
@@ -11,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  *
  */
 @Service
-@FeignClient(name="demo-api")
+@FeignClient(name="demo-api", fallback = DemoFeignClientHystrix.class)
 public interface DemoFeignService {
 
 	@RequestMapping(value="/test/feignTest",method=RequestMethod.GET)

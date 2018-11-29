@@ -46,10 +46,26 @@ server:
     #key-alias: tomcat
 
 #打开feign-hystrix
-feign:
+feign: 
   hystrix: 
     enabled: true
-    
+
+ribbon:
+  ReadTimeout: 10000 #处理超时时间 默认5秒
+  ConnectTimeout: 10000 #连接超时时间 默认2秒
+  #MaxAutoRetries: 0
+  #MaxAutoRetriesNextServer: 1
+ 
+ 
+#hystrix 配置
+hystrix:
+  command: 
+      default:
+        execution:
+          isolation:
+            thread:
+              timeoutInMilliseconds: 12000 #断路切换超时
+
 # 配置info信息
 info: 
   app.name: forest-api
