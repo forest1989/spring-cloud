@@ -6,5 +6,8 @@
 		SELECT
 			test_name
 		FROM test_data
+		<!-- SELECT
+			NAME AS test_name
+		FROM SYS_USER WHERE id = '1' -->
 	</select>
 </mapper>

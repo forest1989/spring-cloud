@@ -10,6 +10,5 @@ import com.forest.api.entity.Demo;
 @Service
 @Transactional(readOnly = true)
 public class DemoService extends CrudService<DemoDao, Demo>{
-
 	
 }

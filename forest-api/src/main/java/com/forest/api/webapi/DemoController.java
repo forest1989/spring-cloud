@@ -11,6 +11,7 @@ import com.forest.api.common.log.Log4j2Utils;
 import com.forest.api.common.utils.CommonResult;
 import com.forest.api.common.web.BaseController;
 import com.forest.api.entity.Demo;
+import com.forest.api.service.DemoFeignService;
 import com.forest.api.service.DemoService;
 
 /**
@@ -28,16 +29,22 @@ public class DemoController extends BaseController{
 	@Autowired
 	private DemoService demoService;
 	
+	@Autowired
+	private DemoFeignService demoFeignService;
+	
     @RequestMapping(value="/hello", method= RequestMethod.GET)
     public CommonResult hello() throws InterruptedException {
     	
     	Logger log = Log4j2Utils.getExceptionLogger();
     	Logger log1 = Log4j2Utils.getBussinessLogger();
     	Logger log2 = Log4j2Utils.getDBLogger();
-    	log.error("getExceptionLogger===日志测试");
+    	//log.error("getExceptionLogger===日志测试");
     	log1.info("getBussinessLogger===日志测试");
-    	log2.debug("getDBLogger===日志测试");
+    	//log2.debug("getDBLogger===日志测试");
     	//Thread.sleep(1000000);
+    	log1.info("Feign调用开始==============");
+    	String str = demoFeignService.helloService();
+    	log1.info("Feign调用日志结果====" + str);
     	Demo d = demoService.get(new Demo());
         return new CommonResult(0000, d, "数据获取成功");
     }

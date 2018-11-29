@@ -5,7 +5,7 @@ spring:
   #oracle database settings
   datasource:
     #platform: oracle
-    #url: jdbc:oracle:thin:@192.168.1.104:1521:orcl
+    #url: jdbc:oracle:thin:@192.168.1.115:1521:orcl
     #username: jeesite
     #password: jeesite
     #driverClassName: oracle.jdbc.driver.OracleDriver
@@ -45,6 +45,11 @@ server:
     #key-store-type: PKCS12
     #key-alias: tomcat
 
+#打开feign-hystrix
+feign:
+  hystrix: 
+    enabled: true
+    
 # 配置info信息
 info: 
   app.name: forest-api
