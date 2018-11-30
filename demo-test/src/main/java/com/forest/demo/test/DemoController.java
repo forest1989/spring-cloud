@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/test")
 public class DemoController {
-
-	
 	
     @RequestMapping(value="/feignTest", method= RequestMethod.GET)
     public String hello() throws InterruptedException {

@@ -15,6 +15,16 @@ spring:
     username: root
     password: 123456
     driverClassName: com.mysql.jdbc.Driver
+    
+management:
+  endpoints: 
+    web: 
+      exposure:
+        include: "*"
+  endpoint:
+      health:
+        show-details: ALWAYS
+
 mybatis:
   mapperLocations: classpath:/mappings/**/*.xml
   type-aliases-package: com.forest.api.entity
