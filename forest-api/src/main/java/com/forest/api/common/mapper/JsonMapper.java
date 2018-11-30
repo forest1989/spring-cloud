@@ -1,6 +1,8 @@
 package com.forest.api.common.mapper;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
@@ -22,8 +24,6 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.util.JSONPObject;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 
 /**
  * 简单封装Jackson，实现JSON String<->Java Object的Mapper.
@@ -228,13 +228,13 @@ public class JsonMapper extends ObjectMapper {
 	 * 测试
 	 */
 	public static void main(String[] args) {
-		List<Map<String, Object>> list = Lists.newArrayList();
-		Map<String, Object> map = Maps.newHashMap();
+		List<Map<String, Object>> list = new ArrayList<>();
+		Map<String, Object> map = new HashMap<>();
 		map.put("id", 1);
 		map.put("pId", -1);
 		map.put("name", "根节点");
 		list.add(map);
-		map = Maps.newHashMap();
+		map = new HashMap<>();
 		map.put("id", 2);
 		map.put("pId", 1);
 		map.put("name", "你好");

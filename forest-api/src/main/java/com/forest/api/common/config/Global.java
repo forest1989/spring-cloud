@@ -1,10 +1,10 @@
 package com.forest.api.common.config;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import com.forest.api.common.PropertiesLoader;
 import com.forest.api.common.utils.StringUtils;
-import com.google.common.collect.Maps;
 
 
 /**
@@ -39,7 +39,7 @@ public class Global {
 	/**
 	 * 保存全局属性值
 	 */
-	private static Map<String, String> map = Maps.newHashMap();
+	private static Map<String, String> map = new HashMap<>();
 
 	/**
 	 * 属性文件加载对象

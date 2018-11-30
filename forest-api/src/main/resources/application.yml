@@ -4,17 +4,17 @@ spring:
     name: forest-api
   #oracle database settings
   datasource:
-    #platform: oracle
-    #url: jdbc:oracle:thin:@192.168.1.115:1521:orcl
-    #username: jeesite
-    #password: jeesite
-    #driverClassName: oracle.jdbc.driver.OracleDriver
+    platform: oracle
+    url: jdbc:oracle:thin:@192.168.1.115:1521:orcl
+    username: jeesite
+    password: jeesite
+    driverClassName: oracle.jdbc.driver.OracleDriver
     #mysql database setting
-    platform: mysql
-    url: jdbc:mysql://localhost:3306/forest?useUnicode=true&characterEncoding=utf-8&useSSL=false
-    username: root
-    password: 123456
-    driverClassName: com.mysql.jdbc.Driver
+    #platform: mysql
+    #url: jdbc:mysql://localhost:3306/forest?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    #username: root
+    #password: 123456
+    #driverClassName: com.mysql.jdbc.Driver
 
 mybatis:
   mapperLocations: classpath:/mappings/**/*.xml
@@ -34,8 +34,7 @@ eureka:
     lease-expiration-duration-in-seconds: 30
 server:
   port: 8081
-  session:
-    timeout: 30
+
   tomcat:
     max-http-post-size: 1
     uri-encoding: UTF-8
@@ -67,7 +66,7 @@ hystrix:
             thread:
               timeoutInMilliseconds: 12000 #断路切换超时
 
-management:
+management: 
   endpoints:
     web:
       exposure:

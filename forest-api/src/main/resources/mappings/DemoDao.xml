@@ -3,11 +3,11 @@
 <mapper namespace="com.forest.api.dao.DemoDao">
 	
 	<select id="get" resultType="Demo">
-		SELECT
-			test_name
-		FROM test_data
 		<!-- SELECT
+			test_name
+		FROM test_data -->
+		SELECT
 			NAME AS test_name
-		FROM SYS_USER WHERE id = '1' -->
+		FROM SYS_USER WHERE id = '1'
 	</select>
 </mapper>

@@ -4,7 +4,6 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.forest.api.common.persistence.CrudDao;
 import com.forest.api.entity.AppUser;
-import com.forest.api.entity.Demo;
 
 /**
  * 

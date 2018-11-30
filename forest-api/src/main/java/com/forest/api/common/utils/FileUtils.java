@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -15,7 +16,6 @@ import org.apache.tools.zip.ZipOutputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.collect.Lists;
 
 /**
    *  文件操作工具类
@@ -751,7 +751,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 	 * @return 文件列表
 	 */
 	public static List<String> findChildrenList(File dir, boolean searchDirs) {
-		List<String> files = Lists.newArrayList();
+		List<String> files = new ArrayList<>();
 		for (String subFiles : dir.list()) {
 			File file = new File(dir + "/" + subFiles);
 			if (((searchDirs) && (file.isDirectory())) || ((!searchDirs) && (!file.isDirectory()))) {

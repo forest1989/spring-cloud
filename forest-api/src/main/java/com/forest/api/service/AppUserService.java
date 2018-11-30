@@ -6,13 +6,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.forest.api.common.service.CrudService;
 import com.forest.api.dao.AppUserDao;
-import com.forest.api.dao.DemoDao;
 import com.forest.api.entity.AppUser;
-import com.forest.api.entity.Demo;
 
 @Service
 @Transactional(readOnly = true)
 public class AppUserService extends CrudService<AppUserDao, AppUser>{
+	
 	@Autowired
     private AppUserDao appUserDao;
 	/**
