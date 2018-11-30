@@ -17,10 +17,10 @@ eureka:   #<1>
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-management:
+management: 
   endpoints:
     web:
-      exposure:
+      exposure: 
         include: "*"  #<2>
   endpoint:
     health:
@@ -36,10 +36,16 @@ spring:
   profiles: secure
   security:
     user:
-      name: "user"
-      password: "password"
+      name: "admin"
+      password: "123456"
 eureka:
   instance:
     metadata-map:
-      user.name: "user"         #These two are needed so that the server
-      user.password: "password" #can access the protected client endpoints
+      user.name: "admin"         #These two are needed so that the server
+      user.password: "123456" #can access the protected client endpoints
+      
+# 配置info信息
+info: 
+  app.name: spring-boot-admin
+  company.name: www.forest.com
+  build.artifactId: $project.artifactId$

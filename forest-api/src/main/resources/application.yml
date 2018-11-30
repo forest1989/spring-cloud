@@ -15,15 +15,6 @@ spring:
     username: root
     password: 123456
     driverClassName: com.mysql.jdbc.Driver
-    
-management:
-  endpoints: 
-    web: 
-      exposure:
-        include: "*"
-  endpoint:
-      health:
-        show-details: ALWAYS
 
 mybatis:
   mapperLocations: classpath:/mappings/**/*.xml
@@ -76,6 +67,15 @@ hystrix:
             thread:
               timeoutInMilliseconds: 12000 #断路切换超时
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint: 
+      health:
+        show-details: ALWAYS
+        
 # 配置info信息
 info: 
   app.name: forest-api
