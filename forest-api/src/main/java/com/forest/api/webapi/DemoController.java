@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestBody;
 
-import com.alibaba.fastjson.JSONObject;
 import com.forest.api.common.jwt.api.TokenMgr;
 import com.forest.api.common.jwt.config.Constant;
 import com.forest.api.common.jwt.model.SubjectModel;

@@ -154,3 +154,4 @@ local.properties
 .scala_dependencies
 .worksheet
 >>>>>>> branch 'master' of https://gitee.com/rit/eureka-server.git
+/pom.xml

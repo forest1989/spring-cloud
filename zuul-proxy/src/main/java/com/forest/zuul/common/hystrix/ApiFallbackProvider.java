@@ -31,7 +31,9 @@ public class ApiFallbackProvider implements FallbackProvider{
 	}
 
 	@Override
-	public ClientHttpResponse fallbackResponse() {
+	public ClientHttpResponse fallbackResponse(String route, Throwable cause) {
+		logger.info("route:"+route);
+		logger.info("exception:"+cause.getMessage());
 		return new ClientHttpResponse() {
             @Override
             public HttpStatus getStatusCode() throws IOException {
@@ -45,7 +47,7 @@ public class ApiFallbackProvider implements FallbackProvider{
 
             @Override
             public String getStatusText() throws IOException {
-                return "OK";
+                return "ok";
             }
 
             @Override
@@ -55,7 +57,7 @@ public class ApiFallbackProvider implements FallbackProvider{
 
             @Override
             public InputStream getBody() throws IOException {
-                return new ByteArrayInputStream("The service is unavailable.".getBytes());
+                return new ByteArrayInputStream("oooops!error,i'm the fallback.".getBytes());
             }
 
             @Override
@@ -65,15 +67,6 @@ public class ApiFallbackProvider implements FallbackProvider{
                 return headers;
             }
         };
-	}
-
-	@Override
-	public ClientHttpResponse fallbackResponse(Throwable cause) {
-		if (cause != null && cause.getCause() != null) {
-            String reason = cause.getCause().getMessage();
-            logger.info("Excption {}", reason);
-        }
-		return fallbackResponse();
 	}
 
 }
