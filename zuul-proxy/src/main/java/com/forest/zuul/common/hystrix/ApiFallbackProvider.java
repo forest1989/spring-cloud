@@ -57,7 +57,7 @@ public class ApiFallbackProvider implements FallbackProvider{
 
             @Override
             public InputStream getBody() throws IOException {
-                return new ByteArrayInputStream("oooops!error,i'm the fallback.".getBytes());
+                return new ByteArrayInputStream("The service is unavailable.".getBytes());
             }
 
             @Override

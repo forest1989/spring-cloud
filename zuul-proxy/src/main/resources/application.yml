@@ -34,6 +34,15 @@ ribbon:
   MaxAutoRetries: 2 #对当前服务的重试次数
   MaxAutoRetriesNextServer: 0 #切换相同Server的次数
   
+management: 
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint: 
+      health:
+        show-details: ALWAYS
+        
 info: 
   app.name: zuul-proxy
   company.name: www.forest.com
