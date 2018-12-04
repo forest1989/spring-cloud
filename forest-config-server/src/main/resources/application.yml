@@ -1,19 +1,5 @@
 server:
   port: 7010
-
-spring:
-  application:
-    name: config-server
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://gitee.com/rit/spring-cloud
-          search-paths: config-repository
-          username: 646884827@qq.com  
-          password: guoshilin1989
-      label: master
-
 # 服务注册中心
 eureka:
   client: 
@@ -24,12 +10,3 @@ eureka:
     lease-renewal-interval-in-seconds: 10
     # 该配置指示eureka服务器在接收到最后一个心跳之后等待的时间，然后才能从列表中删除此实例 (Spring Cloud默认该配置是 90s)
     lease-expiration-duration-in-seconds: 30
-         
-management: 
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  endpoint: 
-      health:
-        show-details: ALWAYS

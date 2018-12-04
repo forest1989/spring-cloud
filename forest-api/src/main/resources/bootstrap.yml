@@ -1,0 +1,30 @@
+spring:
+  application:
+    # 服务名称
+    name: forest-api
+    
+mybatis:
+  mapperLocations: classpath:/mappings/**/*.xml
+  type-aliases-package: com.forest.api.entity
+  #开启自动驼峰命名规则（camel case）映射
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+management: 
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint: 
+      health:
+        show-details: ALWAYS
+        
+# 配置info信息
+info: 
+  app.name: forest-api
+  company.name: www.forest.com
+  build.artifactId: $project.artifactId$
+
+logging:
+  config: classpath:log4j2.yml 

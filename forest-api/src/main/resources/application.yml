@@ -1,7 +1,4 @@
-spring:
-  application:
-    # 服务名称
-    name: forest-api
+spring: 
   #oracle database settings
   datasource:
     platform: oracle
@@ -47,14 +44,19 @@ spring:
         reset-enable: false  #  禁用HTML页面上的"Reset All"功能       
         login-username: druidAdmin  # 登录名   
         login-password: 123456  # 登录密码
-        
 
-mybatis:
-  mapperLocations: classpath:/mappings/**/*.xml
-  type-aliases-package: com.forest.api.entity
-  #开启自动驼峰命名规则（camel case）映射
-  configuration:
-    map-underscore-to-camel-case: true
+server:
+  port: 8081
+  tomcat:
+    max-http-post-size: 1
+    uri-encoding: UTF-8
+  #开启https
+  #ssl:
+    #key-store: classpath:keystore.p12
+    #key-store-password: 123456
+    #key-store-type: PKCS12
+    #key-alias: tomcat
+    
 # 服务注册中心
 eureka:
   client: 
@@ -65,19 +67,8 @@ eureka:
     lease-renewal-interval-in-seconds: 10
     # 该配置指示eureka服务器在接收到最后一个心跳之后等待的时间，然后才能从列表中删除此实例 (Spring Cloud默认该配置是 90s)
     lease-expiration-duration-in-seconds: 30
-server:
-  port: 8081
 
-  tomcat:
-    max-http-post-size: 1
-    uri-encoding: UTF-8
-  #开启https
-  #ssl:
-    #key-store: classpath:keystore.p12
-    #key-store-password: 123456
-    #key-store-type: PKCS12
-    #key-alias: tomcat
-
+    
 #打开feign-hystrix
 feign: 
   hystrix: 
@@ -99,20 +90,5 @@ hystrix:
             thread:
               timeoutInMilliseconds: 12000 #断路切换超时
 
-management: 
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  endpoint: 
-      health:
-        show-details: ALWAYS
-        
-# 配置info信息
-info: 
-  app.name: forest-api
-  company.name: www.forest.com
-  build.artifactId: $project.artifactId$
 
-logging:
-  config: classpath:log4j2.yml 
+
