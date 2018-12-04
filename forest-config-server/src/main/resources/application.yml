@@ -1,5 +1,5 @@
 server:
-  port: 8083
+  port: 7010
 
 spring:
   application:
@@ -9,6 +9,7 @@ spring:
       server:
         git:
           uri: https://gitee.com/rit/spring-cloud
-          search-paths: config-repo
-          username: 646884827@qq.com  #账号密码写真实的快一些我觉得，不使用也能访问有点慢
+          search-paths: config-repository
+          username: 646884827@qq.com  
           password: guoshilin1989
+      label: master
