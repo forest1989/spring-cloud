@@ -13,7 +13,7 @@ management:
 
 #配置info信息      
 info: 
-  app.name: forest-api
+  app.name: netflix-zuul
   company.name: www.forest.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$

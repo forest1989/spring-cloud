@@ -5,6 +5,9 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.forest.zuul.common.jwt.api.ResponseMgr;
 import com.forest.zuul.common.jwt.api.TokenMgr;
 import com.forest.zuul.common.jwt.config.Constant;
@@ -23,7 +26,7 @@ import io.jsonwebtoken.Claims;
  *
  */
 public class TokenFilter extends ZuulFilter {
-
+	private final Logger logger = LoggerFactory.getLogger(TokenFilter.class);
 	// 返回boolean确定filter是否执行
 	@Override
 	public boolean shouldFilter() {
@@ -38,18 +41,15 @@ public class TokenFilter extends ZuulFilter {
 		HttpServletRequest request = ctx.getRequest();
 		String tokenStr = request.getHeader("Authorization");
 		HttpServletResponse response = ctx.getResponse();
+		String requestURL = request.getRequestURL().toString();
+		logger.info("请求的URL地址：" + requestURL);
 		if (tokenStr == null || tokenStr.equals("")) {
 			//认证失败
 	        response.setCharacterEncoding("utf-8");  //设置字符集
 	        response.setContentType("text/html; charset=utf-8"); //设置相应格式
 	        response.setStatus(401);
-	        ctx.setSendZuulResponse(false); //不进行路由
-	        try {
-				response.getWriter().write(ResponseMgr.noLogin());  //响应体
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-	        ctx.setResponse(response);
+	        ctx.setSendZuulResponse(false); //不进行路由	     
+	        ctx.setResponseBody(ResponseMgr.noLogin());       
 	        return null;
 		}
 		// 验证JWT的签名，返回CheckResult对象
@@ -70,12 +70,7 @@ public class TokenFilter extends ZuulFilter {
 		        response.setContentType("text/html; charset=utf-8"); //设置相应格式
 		        response.setStatus(401);
 		        ctx.setSendZuulResponse(false); //不进行路由
-		        try {
-					response.getWriter().write(ResponseMgr.loginExpire());  //响应体
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-		        ctx.setResponse(response);
+		        ctx.setResponseBody(ResponseMgr.loginExpire());  
 				break;
 			// 签名验证不通过
 			case Constant.JWT_ERRCODE_FAIL:
@@ -84,12 +79,7 @@ public class TokenFilter extends ZuulFilter {
 		        response.setContentType("text/html; charset=utf-8"); //设置相应格式
 		        response.setStatus(401);
 		        ctx.setSendZuulResponse(false); //不进行路由
-		        try {
-					response.getWriter().write(ResponseMgr.loginExpire());  //响应体
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-		        ctx.setResponse(response);
+		        ctx.setResponseBody(ResponseMgr.loginExpire());  
 				break;
 			default:
 				break;
