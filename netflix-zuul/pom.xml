@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.forest.zuul</groupId>
-	<artifactId>zuul-proxy</artifactId>
+	<artifactId>netflix-zuul</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>zuul-proxy</name>
+	<name>netflix-zuul</name>
 	<description>spring boot zuul</description>
 
 	<parent>
@@ -72,7 +72,7 @@
 	</dependencyManagement>
 
 	<build>
-		<finalName>zuul-proxy</finalName>
+		<finalName>netflix-zuul</finalName>
 	    <resources>
 	        <resource>
 	            <!-- 允许访问src/main/resources下的内容 -->

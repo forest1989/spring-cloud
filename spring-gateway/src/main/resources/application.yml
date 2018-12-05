@@ -1,0 +1,31 @@
+server: 
+ port: 8769 #spring-gateway的端口号  
+ 
+spring:
+  cloud:  # spring cloud gateway 路由配置方式
+    gateway:
+      discovery: 
+        locator:
+          enabled: true
+          # Spring Cloud Gateway默认service_id必须要大写才能正常访问，此处可以开启lower-case-service-id可以让小写也能正常访问
+          lower-case-service-id: true 
+      routes:
+      #网关路由到demo-test项目
+      - id: 8082               
+        uri: http://localhost:8082/
+        predicates:
+          - Path=/demo-api/**
+        filters: 
+          - StripPrefix=1
+      #网关路由到forest-api 项目
+      - id: forest-api
+        uri: lb://forest-api
+        predicates: 
+          - Path=/forest/**
+        filters: 
+          - StripPrefix=1
+#连接到注册中心
+eureka: 
+ client: 
+  service-url: 
+   defaultZone: http://localhost:8761/eureka 

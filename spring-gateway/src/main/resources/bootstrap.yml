@@ -1,0 +1,19 @@
+spring: 
+ application: 
+  name: spring-gateway # 应用名
+
+management: 
+  endpoints:
+    web:
+      exposure: 
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+#配置info信息      
+info: 
+  app.name: spring-gateway
+  company.name: www.forest.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

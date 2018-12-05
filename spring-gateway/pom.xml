@@ -3,12 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>eureka-server</artifactId>
+	<groupId>com.forest.gateway</groupId>
+	<artifactId>spring-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Eureka Server</name>
-	<description>Eureka Server project</description>
+	<name>spring-gateway</name>
+	<description>Spring Cloud Gateway</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -17,14 +18,25 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<spring-cloud.version>Finchley.SR2</spring-cloud.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
@@ -35,7 +47,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
 	</dependencies>
 
 	<dependencyManagement>
@@ -43,22 +54,15 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Finchley.SR2</version>
+				<version>${spring-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<start-class>eureka.EurekaApplication</start-class>
-		<java.version>1.8</java.version>
-		<docker.image.prefix>springcloud</docker.image.prefix>
-	</properties>
-
 	<build>
-		<finalName>eureka-server</finalName>
+		<finalName>spring-gateway</finalName>
 	    <resources>
 	        <resource>
 	            <!-- 允许访问src/main/resources下的内容 -->
@@ -71,27 +75,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<!-- defined in spring-cloud-starter-parent pom (as documentation hint), 
-					but needs to be repeated here -->
-				<configuration>
-					<requiresUnpack>
-						<dependency>
-							<groupId>com.netflix.eureka</groupId>
-							<artifactId>eureka-core</artifactId>
-						</dependency>
-						<dependency>
-							<groupId>com.netflix.eureka</groupId>
-							<artifactId>eureka-client</artifactId>
-						</dependency>
-					</requiresUnpack>
-				</configuration>
-			</plugin>
-			<plugin>
-				<!--skip deploy (this is just a test module) -->
-				<artifactId>maven-deploy-plugin</artifactId>
-				<configuration>
-					<skip>true</skip>
-				</configuration>
 			</plugin>
 			<plugin>
 	            <groupId>org.apache.maven.plugins</groupId>
@@ -106,6 +89,5 @@
 		</plugins>
 	</build>
 
-	<groupId>com.forest.eureka</groupId>
-	
+
 </project>
