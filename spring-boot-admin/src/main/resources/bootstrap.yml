@@ -16,6 +16,7 @@ management:
       
 # 配置info信息
 info: 
-  app.name: spring-boot-admin
+  app.name: forest-api
   company.name: www.forest.com
   build.artifactId: $project.artifactId$
+  build.version: $project.version$

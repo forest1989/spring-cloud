@@ -1,3 +1,19 @@
 spring:
   application:
     name: eureka
+
+management: 
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint: 
+      health:
+        show-details: ALWAYS
+        
+# 配置info信息
+info: 
+  app.name: eureka-server
+  company.name: www.forest.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$   

@@ -25,6 +25,7 @@ info:
   app.name: forest-api
   company.name: www.forest.com
   build.artifactId: $project.artifactId$
-
+  build.version: $project.version$
+  
 logging:
   config: classpath:log4j2.yml 

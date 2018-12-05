@@ -27,6 +27,10 @@
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -54,6 +58,15 @@
 	</properties>
 
 	<build>
+		<finalName>eureka-server</finalName>
+	    <resources>
+	        <resource>
+	            <!-- 允许访问src/main/resources下的内容 -->
+	            <directory>src/main/resources</directory>
+	            <!-- 过滤开启 -->
+	            <filtering>true</filtering>
+	        </resource>
+	    </resources>
 		<plugins>
 			<plugin>
 				<groupId>com.spotify</groupId>
@@ -105,6 +118,16 @@
 					<skip>true</skip>
 				</configuration>
 			</plugin>
+			<plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-resources-plugin</artifactId>
+	            <configuration>
+	                <delimiters>
+	                    <!-- 在$符号开始$符号结尾的src/main/resources下的内容都可访问 -->
+	                    <delimit>$</delimit>
+	                </delimiters>
+	            </configuration>
+	        </plugin>
 		</plugins>
 	</build>
 
@@ -154,4 +177,5 @@
 	</pluginRepositories>
 
 	<groupId>com.forest.eureka</groupId>
+	
 </project>

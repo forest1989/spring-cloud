@@ -19,3 +19,11 @@ management:
   endpoint: 
       health:
         show-details: ALWAYS
+
+#配置info信息        
+info: 
+  app.name: forest-api
+  company.name: www.forest.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+ 

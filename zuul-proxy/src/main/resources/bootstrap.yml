@@ -13,6 +13,7 @@ management:
 
 #配置info信息      
 info: 
-  app.name: zuul-proxy
+  app.name: forest-api
   company.name: www.forest.com
   build.artifactId: $project.artifactId$
+  build.version: $project.version$
