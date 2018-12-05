@@ -11,3 +11,10 @@ management:
   endpoint: 
       health:
         show-details: ALWAYS
+
+# 配置info信息
+info: 
+  app.name: demo-test
+  company.name: www.forest.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
