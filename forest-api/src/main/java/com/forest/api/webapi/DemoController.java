@@ -1,5 +1,9 @@
 package com.forest.api.webapi;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
@@ -22,6 +26,7 @@ import com.forest.api.entity.AppUser;
 import com.forest.api.entity.Demo;
 import com.forest.api.service.AppUserService;
 import com.forest.api.service.DemoService;
+import com.forest.api.common.utils.ExportExcel;
 
 /**
  * 
@@ -79,5 +84,16 @@ public class DemoController extends BaseController{
 			logger.error("登录异常:"+e.getMessage());
 			return new CommonResult(500, null, "登录异常");
 		}
+    }
+    @RequestMapping(value="/export", method= RequestMethod.GET)
+    public CommonResult hello(HttpServletResponse response) throws InterruptedException, IOException {
+    	AppUser user=new AppUser();
+    	user.setLoginName("tyghh");
+    	AppUser appUser = appUserService.login(user);
+    	List<Object>  li=new ArrayList<Object>();
+    	li.add(appUser);
+    	String fileName = "export.xlsx";
+    	new ExportExcel("用户数据", AppUser.class).setDataList(li).write(response, fileName).dispose();
+        return null;
     }
 }
