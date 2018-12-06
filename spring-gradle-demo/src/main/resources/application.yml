@@ -1,0 +1,7 @@
+spring:
+  application:
+    # 服务名称
+    name: spring-gradle-demo
+
+server: 
+  port: 8086

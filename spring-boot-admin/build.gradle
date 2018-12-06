@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.admin.server'
+version = '0.0.1-SNAPSHOT'
+
+description = "spring-boot-admin"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
+
+repositories {
+        
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'de.codecentric', name: 'spring-boot-admin-starter-server', version:'2.0.4'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'2.0.7.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version:'2.0.7.RELEASE'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version:'2.0.0.RELEASE'
+    compile group: 'org.jolokia', name: 'jolokia-core', version:'1.5.0'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version:'2.0.7.RELEASE'
+}
