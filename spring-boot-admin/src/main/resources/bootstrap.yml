@@ -17,6 +17,6 @@ management:
 # 配置info信息
 info: 
   app.name: spring-boot-admin
-  company.name: www.forest.com
+  company.name: www.guoshilin.cn
   build.artifactId: $project.artifactId$
   build.version: $project.version$
