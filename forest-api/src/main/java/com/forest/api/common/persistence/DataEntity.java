@@ -6,9 +6,9 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.forest.api.common.utils.IdGen;
 import com.forest.api.entity.User;
 import com.forest.api.webapi.sys.utils.UserUtils;
+import com.forest.common.utils.IdGen;
 
 
 /**

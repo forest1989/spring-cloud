@@ -8,8 +8,8 @@ import java.io.Serializable;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.forest.api.common.config.Global;
-import com.forest.api.common.utils.StringUtils;
+import com.forest.common.config.Global;
+import com.forest.common.utils.StringUtils;
 
 /**
  * Entity支持类

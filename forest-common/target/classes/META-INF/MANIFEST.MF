@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: Forest Common
+Implementation-Version: 1.0.0-SNAPSHOT
+Built-By: forest
+Implementation-Vendor-Id: com.forest
+Build-Jdk: 1.8.0_31
+Implementation-URL: http://guoshilin.cn
+Created-By: Maven Integration for Eclipse
+

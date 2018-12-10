@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.forest.api.common.utils.CommonResult;
+import com.forest.common.utils.CommonResult;
 
 /**
  * 

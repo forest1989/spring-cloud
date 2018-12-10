@@ -13,7 +13,9 @@
 	<inceptionYear>2018-Now</inceptionYear>
 	
 	<modules>
-        <module>../parent</module>
+        <module>../forest-parent</module>
+        <module>../forest-common</module>
+        <module>../forest-api</module>
     </modules>
 	
 	<!-- 开发者信息 -->

@@ -2,9 +2,10 @@ package com.forest.api.entity;
 
 import java.util.Date;
 
+
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.forest.api.common.config.Global;
 import com.forest.api.common.persistence.DataEntity;
+import com.forest.common.config.Global;
 
 /**
  * 用户Entity

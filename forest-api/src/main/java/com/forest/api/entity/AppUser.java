@@ -3,7 +3,7 @@ package com.forest.api.entity;
 import org.hibernate.validator.constraints.Length;
 
 import com.forest.api.common.persistence.DataEntity;
-import com.forest.api.common.utils.excel.ExcelField;
+import com.forest.common.utils.excel.ExcelField;
 
 /**
  * 
