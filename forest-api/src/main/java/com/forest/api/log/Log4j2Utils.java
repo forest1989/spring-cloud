@@ -1,4 +1,4 @@
-package com.forest.common.log;
+package com.forest.api.log;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
