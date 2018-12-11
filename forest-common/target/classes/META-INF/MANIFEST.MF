@@ -6,4 +6,5 @@ Implementation-Vendor-Id: com.forest
 Build-Jdk: 1.8.0_31
 Implementation-URL: http://guoshilin.cn
 Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Forest
 

@@ -13,9 +13,9 @@
 	<artifactId>forest-parent</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<description>forest api project for Spring Boot</description>
+	
 	<name>Forest Parent</name>
-	<url>http://forest.com</url>
+	<url>http://guoshilin.cn</url>
 	<inceptionYear>2018-Now</inceptionYear>
 	
 	<properties>
@@ -40,35 +40,76 @@
 		<!-- WEB end -->
 	</dependencies>
 	<build>
-		<finalName>forest-api</finalName>
-	    <resources>
-	        <resource>
-	            <!-- 允许访问src/main/resources下的内容 -->
-	            <directory>src/main/resources</directory>
-	            <!-- 过滤开启 -->
-	            <filtering>true</filtering>
-	        </resource>
-	    </resources>
 		<plugins>
+			<!-- 打包jar文件时，配置manifest文件，加入lib包的jar依赖 -->
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
-					<!-- 引入本地JAR包 -->
-		        	<includeSystemScope>true</includeSystemScope>
-		      	</configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+					</archive>
+				</configuration>
+				<executions>
+					<execution>
+						<configuration>
+							<archive>
+								<manifest>
+									<!-- Add directory entries -->
+									<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+									<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+									<addClasspath>true</addClasspath>
+								</manifest>
+							</archive>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
+			<!-- resource插件 -->
 			<plugin>
-	            <groupId>org.apache.maven.plugins</groupId>
-	            <artifactId>maven-resources-plugin</artifactId>
-	            <configuration>
-	                <delimiters>
-	                    <!-- 在$符号开始$符号结尾的src/main/resources下的内容都可访问 -->
-	                    <delimit>$</delimit>
-	                </delimiters>
-	            </configuration>
-	        </plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+			</plugin>
+			
+			<!-- install插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+			</plugin>
+			
+			<!-- clean插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+			</plugin>
+			
+			<!-- ant插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+			</plugin>
+			
+			<!-- dependency插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+			</plugin>
 		</plugins>
 	</build>
-
+	<!-- 开发者信息 -->
+	<developers>  
+		<developer>
+			<id>forest</id>
+			<name>GuoShiLin</name>
+			<email>forest at qq.com</email>
+			<roles><role>Project lead</role></roles>
+			<timezone>+8</timezone>
+		</developer>
+	</developers>
+	
+	<organization>
+		<name>Forest</name>
+		<url>http://guoshilin.cn</url>
+	</organization>
 </project>

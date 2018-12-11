@@ -16,6 +16,7 @@
 	<name>Forest Common</name>
 	<url>http://guoshilin.cn</url>
 	<inceptionYear>2018-Now</inceptionYear>
+	
 	<properties>
 		
 	</properties>
@@ -85,30 +86,26 @@
 			<artifactId>jackson-dataformat-yaml</artifactId>
 		</dependency>
 	</dependencies>
+	
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<!-- 引入本地JAR包 -->
-		        	<includeSystemScope>true</includeSystemScope>
-		      	</configuration>
-			</plugin>
-			<plugin>
-			    <groupId>org.springframework.boot</groupId>
-			    <artifactId>spring-boot-maven-plugin</artifactId>
-			    <configuration>
-			        <mainClass>com.forest.api.ForestApplication</mainClass>
-			    </configuration>
-			    <executions>
-			        <execution>
-			            <goals>
-			                <goal>repackage</goal>
-			            </goals>
-			        </execution>
-			    </executions>
-			</plugin>
+			
 		</plugins>
 	</build>
+	
+	<!-- 开发者信息 -->
+	<developers>  
+		<developer>
+			<id>forest</id>
+			<name>GuoShiLin</name>
+			<email>forest at qq.com</email>
+			<roles><role>Project lead</role></roles>
+			<timezone>+8</timezone>
+		</developer>
+	</developers>
+	
+	<organization>
+		<name>Forest</name>
+		<url>http://guoshilin.cn</url>
+	</organization>
 </project>
