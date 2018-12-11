@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.forest.config</groupId>
-	<artifactId>forest-config</artifactId>
+	<artifactId>config-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>forest-config</name>
+	<name>config-server</name>
 	<description>Spring cloud config</description>
 
 	<parent>
@@ -59,7 +59,7 @@
 	</dependencyManagement>
 
 	<build>
-		<finalName>forest-config</finalName>
+		<finalName>config-server</finalName>
 	    <resources>
 	        <resource>
 	            <!-- 允许访问src/main/resources下的内容 -->
