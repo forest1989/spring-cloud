@@ -1,19 +1,16 @@
 spring:
   application:
     name: spring-boot-admin
-  profiles:
-    active:
-      - secure
-
+    
 management: 
   endpoints:
     web:
       exposure: 
-        include: "*"
+        include: "*"  #<2>
   endpoint:
     health:
       show-details: ALWAYS
-      
+
 # 配置info信息
 info: 
   app.name: spring-boot-admin

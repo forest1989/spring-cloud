@@ -15,7 +15,7 @@ public class DemoController {
 	
     @RequestMapping(value="/feignTest", method= RequestMethod.GET)
     public String hello() throws InterruptedException {
-    	Thread.sleep(5000);
+    	//Thread.sleep(5000);
     	return "hello, feign";
     }
 

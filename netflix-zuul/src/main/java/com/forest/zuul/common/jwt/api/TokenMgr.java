@@ -70,6 +70,8 @@ public class TokenMgr {
 	 * @return
 	 */
 	public static CheckResult validateJWT(String jwtStr) {
+		// 移除 JWT 前的"Bearer "字符串
+		jwtStr = jwtStr.replace(Constant.JWT_SEPARATOR, "");
 		CheckResult checkResult = new CheckResult();
 		Claims claims = null;
 		try {

@@ -1,7 +1,5 @@
 package com.forest.zuul.common.filter;
 
-import java.io.IOException;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -56,9 +54,9 @@ public class TokenFilter extends ZuulFilter {
 		CheckResult checkResult = TokenMgr.validateJWT(tokenStr);
 		if (checkResult.isSuccess()) {
 			Claims claims = checkResult.getClaims();
-			// logger.info("token校检通过checkResult：" + GsonUtil.objectToJsonStr(checkResult));
+			logger.info("token校检通过checkResult：" + GsonUtil.objectToJsonStr(checkResult));
 			SubjectModel user = GsonUtil.jsonStrToObject(claims.getSubject(), SubjectModel.class);
-			// logger.info("token校检通过user：" + GsonUtil.objectToJsonStr(user));
+			logger.info("token校检通过user：" + GsonUtil.objectToJsonStr(user));
 			// 校验用户信息是否合法
 			return null;
 		} else {

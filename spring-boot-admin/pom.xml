@@ -101,5 +101,20 @@
 		</plugins>
 	</build>
 
+	<!-- 开发者信息 -->
+	<developers>  
+		<developer>
+			<id>forest</id>
+			<name>GuoShiLin</name>
+			<email>forest at qq.com</email>
+			<roles><role>Project lead</role></roles>
+			<timezone>+8</timezone>
+		</developer>
+	</developers>
+	
+	<organization>
+		<name>Forest</name>
+		<url>http://guoshilin.cn</url>
+	</organization>
 
 </project>
